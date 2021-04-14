@@ -1,5 +1,10 @@
 .header__top {
     display: flex;
     flex-direction: row;
-    
+    padding: 0px 25px;
+    align-items: center;
+}
+.header__nav {
+    display: flex;
+    margin-left: 20px;
 }

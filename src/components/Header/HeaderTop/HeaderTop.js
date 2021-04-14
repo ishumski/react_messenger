@@ -8,8 +8,14 @@ function HeaderTop() {
     return (
         <div className="header__top">
             <HeaderLogo image="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" />
-            <HeaderNav text="Home" />
-            <HeaderNav text="Time Line" />
+            
+            <ul className="header__nav">
+                <HeaderNav text="Link" />
+                <HeaderNav text="Link" />
+                <HeaderNav text="Link" />
+                <HeaderNav text="Link" />
+            </ul>
+
 
         </div>
     )

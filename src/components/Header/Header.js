@@ -12,7 +12,6 @@ function Header() {
             <HeaderMain />
             <HeaderBottom displayName={"Ilia White"} />
 
-
         </div>
 
     )
