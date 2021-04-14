@@ -3,7 +3,7 @@ import "./HeaderNav.css";
 
 function HeaderNav({ text }) {
     return (
-        <li><a>{text}</a></li>
+        <li><a href="/link">{text}</a></li>
     )
 }
 export default HeaderNav;

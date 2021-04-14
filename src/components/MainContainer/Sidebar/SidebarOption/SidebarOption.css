@@ -1,0 +1,17 @@
+.sidebarOption{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 20px;
+}
+.sidebarOption > h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.sidebarOption:hover {
+    background-color: #e8f5fe;
+    color: #6ac1ff;
+    transition: color 0.1ms ease-out;
+}

@@ -1,13 +1,27 @@
 import React from "react";
-import { Avatar } from "@material-ui/core";
 import "./HeaderMain.css";
 
 function HeaderMain() {
+
+    // function showMessage() {
+    //     alert("ok")
+    // }
+
     return (
         <div className="header__main">
-            <img className="header__main_cover_foto" src="https://i.pinimg.com/originals/4f/d3/50/4fd3509513507f97cc7b30edc5cc910f.jpg" alt="header-cover-foto" />
+            <img
+                className="header__cover_foto"
+                src="https://i.pinimg.com/originals/4f/d3/50/4fd3509513507f97cc7b30edc5cc910f.jpg"
+                alt="header-cover-foto"
 
-            <Avatar className="header__main_avatar" src="https://www.pngitem.com/pimgs/m/191-1916342_adventure-time-logo-adventure-time-logo-png-transparent.png" />
+            />
+
+            {/* <img
+                onClick={showMessage}
+                className="header__profile_foto"
+                src="https://data.whicdn.com/images/20433362/original.jpg"
+
+            /> */}
         </div>
     )
 }

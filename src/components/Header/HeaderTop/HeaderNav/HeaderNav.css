@@ -7,14 +7,15 @@ a {
     text-decoration: none;
     color: #333333;
     display: block;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1;
-    padding: 21px 20px;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 18px 25px;
     text-transform: capitalize;
-    border: 1px solid transparent;
-    
+    border-bottom: 2px solid transparent;
 }
 a:hover {
-    border: 1px solid lightgray;
+    background-color: #e8f5fe;
+    color: #6ac1ff;
+    transition: color 0.1ms ease-out;
+    border-bottom: 2px solid #6ac1ff;
 }
