@@ -6,16 +6,19 @@ import TimelineIcon from '@material-ui/icons/Timeline';
 import MessageIcon from '@material-ui/icons/Message';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 
+
 function Sidebar() {
     return (
+
         <div className="sidebar">
 
-            <SidebarOption Icon={HomeIcon} text="Home" />
-            <SidebarOption Icon={TimelineIcon} text="Timeline" />
-            <SidebarOption Icon={MessageIcon} text="Message" />
-            <SidebarOption Icon={PhotoCameraIcon} text="Gallery" />
+            <SidebarOption to="/" Icon={HomeIcon} text="Home" />
+            <SidebarOption to="/timeline" Icon={TimelineIcon} text="Timeline" />
+            <SidebarOption to="/message" Icon={MessageIcon} text="Message" />
+            <SidebarOption to="/gallery" Icon={PhotoCameraIcon} text="Gallery" />
 
         </div>
+
     )
 }
 

@@ -1,13 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import "./SidebarOption.css";
 
 
-function SidebarOption({ text, Icon }) {
+function SidebarOption({ text, Icon, to }) {
     return (
-        <div className="sidebarOption">
+        <NavLink to={to} className="sidebarOption">
             <Icon />
             <h3>{text}</h3>
-        </div>
+        </NavLink>
     )
 }
 export default SidebarOption;
