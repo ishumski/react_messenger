@@ -1,4 +1,38 @@
 .about {
-    border: 1px solid;
     margin-bottom: 20px;
+    position: relative;
+    background-color: #ffffff;
+    margin-top: 15px;
+}
+
+.about__profile-photo {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: 0;
+    object-fit: cover;
+    padding: 10px;
+    background-color: #ffffff;
+}
+.about__links {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 250px;
+}
+
+.about__links > p {
+    color: #333333;
+    display: block;
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 18px 25px;
+    text-transform: capitalize;
+    border-bottom: 2px solid transparent;
+}
+
+.about__links > p:hover {
+    background-color: #e8f5fe;
+    color: #6ac1ff;
+    transition: color 0.1ms ease-out;
+    border-bottom: 2px solid #6ac1ff;
 }
