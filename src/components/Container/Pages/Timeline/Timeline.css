@@ -1,0 +1,21 @@
+.timeline {
+    display: flex;
+    
+}
+
+.timeline__line {
+    flex: 0.7;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    min-width: fit-content;
+    overflow-y: scroll;
+}
+.timeline__posts {
+    margin-top: 25px;
+    background-color: lightskyblue;
+}
+
+.timeline__widget {
+    flex: 0.3;
+    border: 1px solid lightskyblue;
+}

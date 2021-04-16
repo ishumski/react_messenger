@@ -1,0 +1,29 @@
+.post {
+    display: flex;
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid lightskyblue;
+    background-color: white;
+}
+.post__body {
+    margin-left: 15px;
+}
+
+.post__headerInfo {
+    margin-bottom: 10px;
+}
+
+.post__headerText{
+    margin-bottom: 10px;
+}
+.post__body > img {
+  max-width: 500px;
+  min-width: 300px;
+  width: 100%;
+
+}
+.post__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

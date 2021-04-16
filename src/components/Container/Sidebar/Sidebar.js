@@ -14,7 +14,7 @@ function Sidebar() {
 
             <SidebarOption to="/" Icon={HomeIcon} text="Home" />
             <SidebarOption to="/timeline" Icon={TimelineIcon} text="Timeline" />
-            <SidebarOption to="/message" Icon={MessageIcon} text="Message" />
+            <SidebarOption to="/message" Icon={MessageIcon} text="Messages" />
             <SidebarOption to="/gallery" Icon={PhotoCameraIcon} text="Gallery" />
 
         </div>
