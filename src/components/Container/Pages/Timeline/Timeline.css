@@ -8,7 +8,7 @@
     margin-right: 20px;
     margin-bottom: 20px;
     min-width: fit-content;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .timeline__posts {
     margin-top: 25px;
