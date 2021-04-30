@@ -1,37 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Post from './Post/Post.js';
 import "./Timeline.css";
 import TimelineBox from './TimelineBox/TimelineBox';
+import  db  from "../../../../firebase.js";
 
 
-function Gallery() {
+function Timeline() {
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        db.collection("posts").onSnapshot((snapshot) =>
+            setPosts(snapshot.docs.map((doc) => doc.data()))
+        );
+    }, []);
+
     return (
         <div className="timeline">
 
             <div className="timeline__line">
 
                 <TimelineBox />
-                <Post
-                    displayName="Jane Doy"
-                    avatar="https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"
-                    text="Hardcore post Text"
-                    image="https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"
-                    username="deadinside"
-                />
-                 <Post
-                    displayName="Jane Doy"
-                    avatar="https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"
-                    text="Hardcore post Text"
-                    image="https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"
-                    username="deadinside"
-                />
-                 <Post
-                    displayName="Jane Doy"
-                    avatar="https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"
-                    text="Hardcore post Text"
-                    image="https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"
-                    username="deadinside"
-                />
+                {posts.map((post) => (
+                    <Post
+                        key={post.text}
+                        displayName={post.displayName}
+                        username={post.username}
+                        text={post.text}
+                        avatar={post.avatar}
+                        image={post.image}
+
+                    />
+                ))}
+
 
 
             </div>
@@ -44,4 +45,4 @@ function Gallery() {
     )
 }
 
-export default Gallery;
+export default Timeline;
