@@ -13,14 +13,14 @@
     margin-bottom: 10px;
 }
 
-.post__headerText{
-    margin-bottom: 10px;
+.post__headerText {
+    max-width: 500px;
+    margin-bottom: 20px;
 }
 .post__body > img {
-  max-width: 500px;
-  min-width: 300px;
-  width: 100%;
-
+    max-width: 500px;
+    min-width: 300px;
+    width: 100%;
 }
 .post__footer {
     display: flex;
