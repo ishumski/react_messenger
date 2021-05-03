@@ -21,7 +21,7 @@ function Post({username, avatar, displayName, text, image}) {
                     </div>
                 </div>
                 <div className="post__headerText">
-                    <p>{text}</p>
+                    <p >{text}</p>
                 </div>
                 <img src={image} alt="" />
                 <div className="post__footer">

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import "./TimelineBox.css";
 import { Avatar, Button } from '@material-ui/core';
-import db from "../../../../../firebase.js"
+import { db } from "../../../../../firebase.js"
+import ImageUpload from '../../../../../ImageUpload';
 
 
 
@@ -35,6 +36,7 @@ function TimelineBox() {
 
                     />
                 </div>
+                <ImageUpload />
                 <Button
                     className="timeline__btn"
                     type="submit"
@@ -43,6 +45,7 @@ function TimelineBox() {
                 >
                     Post
                 </Button>
+                
             </form>
         </div>
     )
