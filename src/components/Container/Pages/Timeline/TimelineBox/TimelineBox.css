@@ -22,7 +22,12 @@
     margin-left: 20px;
     font-size: 20px;
     outline: none;
-    border: none;
+    /* border: none; */
+}
+
+.timeline__box_input > .MuiIconButton-root {
+    border: 1px solid lightcoral;
+    border-radius: none!important;
 }
 
 .timeline__btn {

@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import "./TimelineBox.css";
 import { Avatar, Button } from '@material-ui/core';
+import AttachFileIcon from '@material-ui/icons/AttachFile';
+import IconButton from '@material-ui/core/IconButton';
 import { db, storage } from "../../../../../firebase.js"
 
 function TimelineBox() {
 
     const [caption, setCaption] = useState("");
     const [image, setImage] = useState(null);
+
+    const customUploadIcon = useRef(null);
+
+
+    const handleClick = event => {
+        customUploadIcon.current.click()
+        console.log("it works")
+    };
 
     //выбираем картинку
     const handleChange = (event) => {
@@ -58,10 +68,23 @@ function TimelineBox() {
                         placeholder="What's happening..."
                         value={caption}
                         onChange={(event) => setCaption(event.target.value)}
+                    />
+
+                    <IconButton onClick={handleClick}>
+                        <AttachFileIcon />
+                    </IconButton>
+
+                    <input
+                        type="file"
+                        onChange={handleChange}
+                        ref={customUploadIcon}
+                        style={{ display: 'none' }}
 
                     />
+
                 </div>
-                <input type="file" onChange={handleChange} />
+
+
                 <Button
                     className="timeline__btn"
                     type="submit"
