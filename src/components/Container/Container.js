@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Container.css";
 import About from "./About/About.js";
-import Sidebar from "./Sidebar/Sidebar.js";
+import Sidebar from "../Sidebar/Sidebar.js";
 import Main from "./Main/Main.js";
 
 

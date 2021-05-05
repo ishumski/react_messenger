@@ -3,7 +3,7 @@ import "./TimelineBox.css";
 import { Avatar, Button } from '@material-ui/core';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import IconButton from '@material-ui/core/IconButton';
-import { db, storage } from "../../../../../firebase.js"
+import { db, storage } from "../../../../firebase.js"
 
 function TimelineBox() {
 

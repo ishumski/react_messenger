@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Post from './Post/Post.js';
 import "./Timeline.css";
 import TimelineBox from './TimelineBox/TimelineBox';
-import { db } from "../../../../firebase.js";
+import { db } from "../../../firebase.js";
 
 
 function Timeline() {
