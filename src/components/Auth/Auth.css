@@ -1,9 +1,21 @@
-.auth {
+.signIn,
+.signUp {
   display: flex;
-  position: relative;
+  flex-direction: column;
+}
+.signIn > .signIn__img,
+.signUp > .signUp__img {
+  max-width: 103px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.signIn__wrapper {
+/* .auth {
+  display: flex;
+  position: relative;
+} */
+
+/* .signIn__wrapper {
   width: 300px;
   height: 250px;
   position: absolute;
@@ -11,26 +23,22 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
-}
+} */
 
-.signIn {
+/* .signIn {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 25px 15px;
-}
+} */
 
-.signIn > .signIn__img {
-  width: 103px;
-}
-
-.signIn > .MuiInputBase-input{
+/* .signIn > .MuiInputBase-input{
   width: 100% !important;
   height: 35px !important;
   padding-left: 10px !important;
   margin: 10px 0px !important;
-}
+} */
 
-.signIn__btn {
+/* .signIn__btn {
   margin-top: 20px !important;
-}
+} */

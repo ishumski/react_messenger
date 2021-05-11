@@ -1,13 +1,37 @@
 import { Button, Input } from '@material-ui/core';
 import React, { useState } from 'react';
-
+import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import './Auth.css';
 // import { auth } from '../../firebase.js'
 
+
+function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+
+
 function Auth() {
-
-
+  const classes = useStyles();
+  const [modalStyle] = React.useState(getModalStyle);
 
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
@@ -16,16 +40,6 @@ function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUserName] = useState("");
-
-  const handleOpen = () => {
-    setOpenSignIn(true);
-  
-  };
-
-  const handleClose = () => {
-    setOpenSignIn(false);
-    
-  };
 
   const c = (event) => {
     event.preventDefault();
@@ -36,14 +50,14 @@ function Auth() {
 
   return (
     <div className="auth">
-      <Button onClick={handleOpen}>Sign in</Button>
-      <Button>Sign up</Button>
+      <Button onClick={() => setOpenSignIn(true)}>Sign in</Button>
+      <Button onClick={() => setOpenSignUp(true)}>Sign up</Button>
 
       <Modal
         open={openSignIn}
-        onClose={handleClose}
+        onClose={() => setOpenSignIn(false)}
       >
-        <div className="signIn__wrapper">
+        <div style={modalStyle} className={classes.paper}>
           <form className="signIn" >
             <img className="signIn__img"
               src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
@@ -76,9 +90,9 @@ function Auth() {
 
       <Modal
         open={openSignUp}
-        onClose={handleClose}
+        onClose={() => setOpenSignUp(false)}
       >
-        <div className="signUp__wrapper">
+        <div style={modalStyle} className={classes.paper}>
           <form className="signUp" >
             <img className="signUp__img"
               src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
