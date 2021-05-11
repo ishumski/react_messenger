@@ -1,9 +1,11 @@
+import React, { useState, useEffect } from 'react';
+
+import './Auth.css';
 import { Button, Input } from '@material-ui/core';
-import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import './Auth.css';
-// import { auth } from '../../firebase.js'
+
+import { db, auth } from '../../firebase.js'
 
 
 function getModalStyle() {
@@ -35,11 +37,12 @@ function Auth() {
 
   const [openSignIn, setOpenSignIn] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
-  // const [open, setOpen] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUserName] = useState("");
+
+  const [user, setUser] = useState(null);
 
   const c = (event) => {
     event.preventDefault();
@@ -48,10 +51,53 @@ function Auth() {
     setPassword("")
   }
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser);
+      } else {
+        setUser(null)
+      }
+    });
+    return () => {
+      unsubscribe();
+    }
+
+  }, [user, username]);
+
+  const signUpUser = (event) => {
+    event.preventDefault();
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        return authUser.user.updateProfile({
+          displayName: username,
+        });
+      })
+      .catch((error) => alert(error.message));
+    setOpenSignUp(false);
+  };
+
+  const signInUser = (event) => {
+    event.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .catch((error) => alert(error.message));
+    setOpenSignIn(false);
+  }
+
   return (
     <div className="auth">
-      <Button onClick={() => setOpenSignIn(true)}>Sign in</Button>
-      <Button onClick={() => setOpenSignUp(true)}>Sign up</Button>
+      {user ? (
+        <Button onClick={() => auth.signOut()}>Logout</Button>
+      ) : (
+        <>
+          <Button onClick={() => setOpenSignIn(true)}>Sign In</Button>
+          <Button onClick={() => setOpenSignUp(true)}>Sign Up</Button>
+        </>
+      )}
 
       <Modal
         open={openSignIn}
@@ -79,14 +125,13 @@ function Auth() {
             <Button
               className="signIn__btn"
               type="submit"
-              onClick={c}
+              onClick={signInUser}
             >
               Sign In
               </Button>
           </form>
         </div>
       </Modal>
-
 
       <Modal
         open={openSignUp}
@@ -121,7 +166,7 @@ function Auth() {
             <Button
               className="signUp__btn"
               type="submit"
-              onClick={c}
+              onClick={signUpUser}
             >
               Sign Up
               </Button>
