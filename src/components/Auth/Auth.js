@@ -44,13 +44,6 @@ function Auth() {
 
   const [user, setUser] = useState(null);
 
-  const c = (event) => {
-    event.preventDefault();
-    console.log(email, password);
-    setEmail("");
-    setPassword("")
-  }
-
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -71,6 +64,7 @@ function Auth() {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((authUser) => {
+        console.log(username)
         return authUser.user.updateProfile({
           displayName: username,
         });

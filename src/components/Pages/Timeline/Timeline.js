@@ -25,7 +25,6 @@ function Timeline() {
                     <Post
                         key={post.text}
                         displayName={post.displayName}
-                        username={post.username}
                         text={post.text}
                         avatar={post.avatar}
                         image={post.image}

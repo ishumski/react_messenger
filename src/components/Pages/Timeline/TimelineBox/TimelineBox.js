@@ -45,7 +45,6 @@ function TimelineBox() {
                     .then((url) => {
                         db.collection("posts").add({
                             displayName: "Jane Doe",
-                            username: "deadinside",
                             text: caption,
                             avatar: 'https://data.whicdn.com/images/20433362/original.jpg',
                             image: url,
@@ -79,7 +78,6 @@ function TimelineBox() {
                         onChange={handleChange}
                         ref={customUploadIcon}
                         style={{ display: 'none' }}
-
                     />
 
                 </div>

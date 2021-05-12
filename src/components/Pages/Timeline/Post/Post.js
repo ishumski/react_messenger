@@ -7,7 +7,7 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 
-function Post({username, avatar, displayName, text, image}) {
+function Post({ avatar, displayName, text, image}) {
     return (
         <div className="post">
             <Avatar src={avatar} />
@@ -16,7 +16,7 @@ function Post({username, avatar, displayName, text, image}) {
                     <div className="post__headerInfo">
                         <h3>
                             {displayName}{" "}
-                            <span className="post__username">@ {username}</span>
+                            <span className="post__username"></span>
                         </h3>
                     </div>
                 </div>
